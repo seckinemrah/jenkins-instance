@@ -73,4 +73,4 @@
 # EOF
  echo test
 # cat backend.tf
-# terraform init 
+terraform init 
