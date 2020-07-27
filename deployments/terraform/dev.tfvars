@@ -3,3 +3,8 @@ s3_folder_project = "jenkins"
 s3_folder_region = "us-east-1"
 s3_folder_type = "class"
 s3_tfstate_file = "infrastructure.tfstate"
+
+ami_us-east-1 = "ami-08f3d892de259504d"
+ami_us-east-2 = "ami-016b213e65284e9c9"
+ami_us-west-1 = "ami-01311df3780ebd33e"
+ami_us-west-2 = "ami-0a243dbef00e96192"
