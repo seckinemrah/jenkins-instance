@@ -45,10 +45,7 @@ def slavePodTemplate = """
             hostPath:
               path: /var/run/docker.sock
     """
-    def virginia_ami = "ami-08f3d892de259504d"
-    def ohio_ami = "ami-016b213e65284e9c9"
-    def california_ami = "ami-01311df3780ebd33e"
-    def oregon_ami = "ami-0a243dbef00e96192"
+   
 
 
 
@@ -59,7 +56,7 @@ def slavePodTemplate = """
             choice(choices: ['us-west-2', 'us-west-1', 'us-east-2', 'us-east-1', 'eu-west-1'], description: 'Please select the region', name: 'aws_region'),
             choice(choices: ['dev', 'qa', 'stage', 'prod'], description: 'Please select the environment to deploy.', name: 'environment'),
             choice(choices: ['', ' TRACE', ' DEBUG', 'INFO', 'WARN ', ' ERROR'], description: 'Please select logs for setting the  environment: ', name: 'TF_LOG'),
-            string(defaultValue: '', description: 'Please add an ami_id:', name: 'ami_id', trim: false),
+            
         ])
     ])
 
@@ -77,7 +74,7 @@ def slavePodTemplate = """
             println("Generate Variables")
             def deployment_configuration_tfvars = """
             environment = "${environment}"
-            ami_id = "${ami_us-east-1, ami_us-east-2, ami_us-west-1, ami_us-west-2}"
+ 
             
             """.stripIndent()
             writeFile file: 'deployment_configuration.tfvars', text: "${deployment_configuration_tfvars}"
